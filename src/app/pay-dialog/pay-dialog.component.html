@@ -1,0 +1,76 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-8">
+    <div class="card">
+    <div class="card-header card-header-success">
+        <button mat-raised-button id="modal-cancel-button" style="margin-left:630px;" (click)="closeModal()">Back</button>
+    <h4 class="card-title" style="color: white;text-align: center;"> PAID DETAILS</h4>
+    <p class="card-category" style="color: white;"></p>
+    </div>
+    <div class="card-body">
+<div class="row" > 
+    <div class="col-md-4">
+        <label >DATE:</label >
+        <input  name="date" [(ngModel)]="date">
+        <input type="date" name="date" [(ngModel)]="date" >
+        </div>
+    
+    <div class="col-md-4">
+        <mat-form-field>
+          <mat-label >File Owner ID</mat-label >
+        <mat-select [(ngModel)]="file_owner_id" name="file_owner_id">
+        <mat-option *ngFor="let account of accountid" [value]="account.file_owner_id" > {{account.file_owner_id}}
+        </mat-option>
+        </mat-select> 
+        </mat-form-field>
+        </div>
+       
+            
+              <div class="col-md-6" >
+           <button mat-raised-button  type="submit" (click)="onPay(file_owner_id,date)" class="btn btn-info pull-right">Submit</button>
+                </div>
+                <br>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th>SL.no</th>
+                          <th>Date</th>
+                          <th>Extra Amount</th>
+                          <th>Comment</th>
+                          <th>Final Advance</th>
+                          <!-- <th>final</th>
+                          <th>Advance</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let driver of payy ;let i=index" >
+                        <!-- <tr *ngIf="advn.length=='n'" > -->
+                        <td>{{i+1}}</td>
+                        <td *ngFor="let pays of driver.advance_info">{{pays.date}}}</td>
+                        <td *ngFor="let pays of driver.advance_info">{{pays.extra_amount}}</td>
+                        <td *ngFor="let pays of driver.advance_info">{{pays.comment}}</td>
+                        <td *ngFor="let pays of driver.advance_info">{{pays.final_advance}}</td>
+                        <!-- <td>{{ add.final_val }}</td>
+                        <td >{{ add.advns }}</td> -->
+                      </tr>
+                    </tbody>
+                  </table>
+                <!-- <div *ngFor="let driver of payy" >
+                    <h3 *ngFor="let pays of driver.advance_info" >Date :{{pays.date}}</h3> 
+                    <h3 *ngFor="let pays of driver.advance_info" >Extra Amount :{{pays.extra_amount}}</h3> 
+                    <h3 *ngFor="let pays of driver.advance_info" >Comment:{{pays.comment}}</h3> 
+                    <h3 *ngFor="let pays of driver.advance_info" >Final Advance:{{pays.final_advance}}</h3> 
+                    
+                   </div> -->
+          </div>
+        </div>
+    </div>
+    </div> 
+    </div>
+    </div>
+    </div>
+
+         

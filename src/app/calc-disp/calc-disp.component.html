@@ -1,0 +1,120 @@
+<div class="main-content" *ngIf="isAdmin">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-6">
+    <div class="card">
+        <div class="card-body">
+   
+ <h4 class="text-center text-danger">ENTER FILE OWNER ID</h4>
+                    
+ <div class="row"> 
+                    <div class="col-md-4">
+                        <mat-form-field>
+                        <mat-label >File Owner ID</mat-label >
+                       <mat-select [(ngModel)]="file_owner_id"name="file_owner_id">
+                        <mat-option *ngFor="let account of accountid" [value]="account.file_owner_id" > {{account.file_owner_id}}
+                        </mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                  </div>
+                    <div class="col-md-6" >
+                       
+                        <button mat-raised-button style="background-color: rgb(230, 70, 42);" type="submit" (click)="onEnter(file_owner_id)" class="btn btn-info pull-right">Submit</button>
+                        <!-- <button type ="submit" id="submit" (click)="onLogin(Phone)">Submit</button> -->
+                   </div>
+                </div>
+                
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                              <th>SL.no</th>
+                              <th>Amount</th>
+                              <th>Bank</th>
+                              <th>Incentive</th>
+                              <!-- <th>final</th>
+                              <th>Advance</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let add of advn ;let i=index" >
+                            <!-- <tr *ngIf="advn.length=='n'" > -->
+                            <td>{{i+1}}}</td>
+                            <td>{{ add.amt }}</td>
+                            <td>{{ add.bank }}</td>
+                            <td>{{ add.incentv}}</td>
+                            <!-- <td>{{ add.final_val }}</td>
+                            <td >{{ add.advns }}</td> -->
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div>
+                      <h5 style="background-color: aqua;color: black;">Final Incentive Amount is :{{final_val}}</h5>
+                      <h5 style="background-color: aqua;color: black;">Advance Amount is : {{advns}}</h5>
+                    </div>
+
+                    <!-- <div *ngFor="let add of advn">
+                     <h6>AMOUNT :{{add.amt}}</h6> 
+                     <h6>BANK :{{add.bank}}</h6> 
+                     <h6>INCENTIVE :{{add.incentv}}</h6> 
+                     <h6>FINAL :{{add.final}}</h6> 
+                     <h6>ADVANCE :{{add.adv}}</h6><br>
+                    </div> -->
+                </div><br>
+                <!-- <div class="row"> 
+                      <div class="col-md-4">
+                          <mat-form-field  class="example-full-width">
+                          <input  matInput name="extra_amount" [(ngModel)]="extra_amount"  placeholder="Extra Amount"required> 
+                          </mat-form-field>
+                          </div>
+                          <div class="col-md-4">
+                            <mat-form-field  class="example-full-width">
+                            <input  matInput name="comment" [(ngModel)]="comment"  placeholder="comments"required> 
+                            </mat-form-field>
+                            </div>
+                            <div class="col-md-4" >
+                         <button mat-raised-button  type="submit" (click)="addData(file_owner_id,extra_amount,comment)" class="btn btn-info pull-right">Submit</button>
+                              </div>
+                        </div><br> -->
+                        <hr>
+                <h3 class="text-center text-success">FINAL CACULATION</h3>
+                <div class="row"> 
+                    <div class="col-md-4">
+                        <mat-form-field  class="example-full-width">
+                        <input  matInput name="advance" [(ngModel)]="advance"  placeholder="Advanced Amount"required> 
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field  class="example-full-width">
+                            <input  matInput name="total_amount" [(ngModel)]="total_amount"  placeholder="Final Amount"required> 
+                            </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                              <mat-form-field  class="example-full-width">
+                              <input  matInput name="comment" [(ngModel)]="comment"  placeholder="comments"required> 
+                              </mat-form-field>
+                              </div>
+                              <div class="col-md-4" >
+                           <button mat-raised-button  type="submit" (click)="onDispl(file_owner_id,total_amount,advance,comment)" class="btn btn-info pull-right">Submit</button>
+                                </div>
+                          </div>
+                          <hr>
+                          <h4 style="color: blue;">Total Sum :{{totl}}</h4>
+                          <hr>
+                <button mat-raised-button id="remove" mwlConfirmationPopover
+                [popoverTitle]="popoverTitle"
+                [popoverMessage]="popoverMessage"
+                 placement="right"
+                 (confirm)="clearData(file_owner_id)"
+                 (cancel)="cancelClicked = true" style="background-color: rgba(7, 161, 123, 0.87); color: aliceblue; margin-top: 2px; margin-left: 6px;height:50px;">Clear Data</button>
+                          
+                           </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+ 
+  
+  

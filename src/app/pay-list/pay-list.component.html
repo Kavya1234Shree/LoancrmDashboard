@@ -1,0 +1,121 @@
+<div *ngIf="isAdmin">
+    <h2 style="text-align: center;font-family: Georgia, serif;">Payed List</h2>
+    <!-- <button type="button" class="btn trade-back"  [routerLink]="['/dashboard']">Back</button> <br> -->
+    <button mat-raised-button color="primary" style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;width:120px;" [routerLink]="['/pay-list']" (click)="refresh()">Refresh</button><br>
+    <!-- <div style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;" >
+      <button (click)="download()" class="btn btn-success">Export To Excel</button> 
+     </div> -->
+     <div style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;">
+      <button (click)="download()" class="btn btn-success">Export To Excel</button> 
+     </div>
+
+     <input  type="text" id="myInput" style="margin-left:500px;" placeholder="Search here.. " [(ngModel)]="term" title="Type in a name">
+     <br>
+     
+    <!-- <div class="row" > 
+     
+      <div class="col-md-3" style="margin-left: 50px;">
+          <mat-form-field>
+            <mat-label >File Owner ID</mat-label >
+          <mat-select [(ngModel)]="file_owner_id" name="file_owner_id">
+          <mat-option *ngFor="let account of accountid" [value]="account.file_owner_id" > {{account.file_owner_id}}
+          </mat-option>
+          </mat-select> 
+          </mat-form-field>
+          </div>
+          <div class="col-md-3" >
+            <label >DATE:</label >
+            <input  name="date" [(ngModel)]="date">
+            <input type="month" name="date" [(ngModel)]="date" >
+            </div>
+        
+          <div class="col-md-2" >
+            <button mat-raised-button  type="submit" (click)="onPay(file_owner_id,date)" class="btn btn-info pull-right">Submit</button>
+                 </div>
+                </div> -->
+           
+    
+    <div class="container"
+    fxLayout
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0" style="background-color: white;">
+    
+    <div class="container">
+           
+    <table id="customers">
+      <col width="130">
+    <thead>
+     <tr>
+      <th>SL.no</th>
+      <!-- <th>File Owner Id</th>
+      <th>Customer Name</th>
+      <th>Application Id</th>
+      <th>Bank Name</th>
+      <th>Disbursed Loan Amount</th>
+      <th>Advance</th>
+      <th>Incentive Amount</th>
+      <th>Incentive</th>
+      <th>Month Of Disburse</th>
+      <th>Date</th>
+      <th>Extra Amount</th>
+      <th>Comment</th>
+      <th>Final Advance</th> -->
+       
+       <th>Customer Name</th>
+       <th>File Owner Id</th> 
+       <th>Application ID</th>
+       <th>Bank Name</th>
+       <th>Disbursed Loan Amount</th>
+        <th>Advance</th>
+        <th>Incentive Amount</th>
+        <th>Incentive</th>
+        <th>Month of Disbursment</th>
+        <!-- <th>Action</th> -->
+    </thead>
+        <tr *ngFor="let driver of drivtwo_info |filter:term;let i = index;">
+          <!-- <td>{{i+1}}</td> -->
+          <!-- <td>{{driver.file_owner_id}}</td>
+          <td>{{driver.customer_name}}</td>
+          <td>{{driver.app_id}}</td>
+          <td>{{driver.bank_name}}</td>
+          <td>{{driver.disbursed_loan_amount}}</td>
+          <td>{{driver.advance}}</td>
+          <td>{{driver.incentive_amount}}</td>
+          <td>{{driver.final_incentive}}</td>
+          <td>{{driver.month_disbursement}}</td>
+          <td *ngFor="let pays of driver.advance_info">{{pays.date}}}</td>
+          <td *ngFor="let pays of driver.advance_info">{{pays.extra_amount}}</td>
+          <td *ngFor="let pays of driver.advance_info">{{pays.comment}}</td>
+          <td *ngFor="let pays of driver.advance_info">{{pays.final_advance}}</td> -->
+          <td >{{(page-1)*15+i+1}}</td> 
+          <!-- <td *ngFor="let diver of driver.driver_info">{{diver.driver_uuid}}</td>
+          <td *ngFor="let diver of driver.driver_info">{{diver.driver_name}}</td>
+          <td *ngFor="let diver of driver.driver_info">{{diver.phone}}</td> 
+         
+          <td>{{driver}}</td> 
+          <td> <span *ngIf="!driver.editable">{{driver.date | date:'DD-MM-yyyy'}}</span>
+            <input type="date" class="form-control" [(ngModel)]="driver.date" *ngIf="driver.editable"/></td> -->
+            <td>{{driver.customer_name}}</td> 
+            <td>{{driver.file_owner_id}}</td>
+          <td>{{driver.app_id}}</td>
+          <td>{{driver.bank_name}}</td> 
+          <td>{{driver.disbursed_loan_amount}}</td>
+          <td>{{driver.advance}}</td>
+          <td>{{driver.incentive_amount}}</td>
+          <td>{{driver.incentive}}</td>
+          <td>{{driver.month_disbursement | date:'MM-yyyy'}}</td>
+           
+           <!-- <td>
+            <button mat-raised-button  type="submit" (click)="onPay(file_owner_id,date)" class="btn btn-info pull-right">Submit</button>
+          </td>  -->
+         </tr>
+      </table>
+      <!-- <div>
+        <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+      </div> -->
+      </div>
+      </div>
+    </div>
+    

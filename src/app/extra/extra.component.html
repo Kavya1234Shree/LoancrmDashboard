@@ -1,0 +1,60 @@
+<div *ngIf="isAdmin">
+    <h2 style="text-align: center;font-family: Georgia, serif;">Extra Amount paid</h2>
+    <!-- <button type="button" class="btn trade-back"  [routerLink]="['/dashboard']">Back</button> <br> -->
+    <button mat-raised-button color="primary" style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;width:120px;" [routerLink]="['/extra']" (click)="refresh()">Refresh</button><br>
+    <!-- <div style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;" >
+      <button (click)="download()" class="btn btn-success">Export To Excel</button> 
+     </div> -->
+     <!-- <div style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;">
+      <button (click)="download()" class="btn btn-success">Export To Excel</button> 
+     </div> -->
+    
+    <input  type="text" id="myInput" style="margin-left:500px;" placeholder="Search here.. " [(ngModel)]="term" title="Type in a name">
+    
+    
+    
+    <div class="container"
+    fxLayout
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0" style="background-color: white;">
+    
+    <div class="container">
+           
+    <table id="customers">
+      <col width="160">
+    <thead>
+     <tr>
+       <th>SL.NO</th>
+       <th>File Owner Id</th>
+       <th>Extra Amount Paid</th>
+       <th>Date</th>
+       <th>Comments</th>
+        <th>Final Advance</th>
+       
+    </thead>
+        <tr *ngFor="let driver of drivtwo_info | paginate: { id:'listing_pagination',itemsPerPage: 15,currentPage: page,totalItems: totalRec }|filter:term;let i = index;">
+          <td >{{(page-1)*15+i+1}}</td>
+          <!-- <td *ngFor="let diver of driver.driver_info">{{diver.driver_uuid}}</td>
+          <td *ngFor="let diver of driver.driver_info">{{diver.driver_name}}</td>
+          <td *ngFor="let diver of driver.driver_info">{{diver.phone}}</td>  -->
+         
+          <td>{{driver.file_owner_id}}</td> 
+          <td>{{driver.extra_amount}}</td>
+          <td>{{driver.date|date}}</td>
+          <td>{{driver.comment}}</td> 
+          <td>{{driver.final_advance}}</td>
+           
+          <!-- <td>
+            <button mat-raised-button style="background-color:darkcyan; color:white;" (click)="openModal(driver.file_owner_id)">EDIT</button>
+          </td> -->
+         </tr>
+      </table>
+      <div>
+        <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+      </div>
+      </div>
+      </div>
+    </div>
+    

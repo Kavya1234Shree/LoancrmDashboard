@@ -1,0 +1,276 @@
+<div class="main-content" >
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-8">
+    <div class="card">
+    <div class="card-header card-header-success">
+        <button mat-raised-button id="modal-cancel-button" style="margin-left:630px;" (click)="closeModal()">Back</button>
+    <h4 class="card-title" style="color: white;text-align: center;">Update File Owner</h4>
+    <p class="card-category" style="color: white;"></p>
+    </div>
+    <div class="card-body">
+                                                       
+    
+      <div class="row">
+
+        <div class="col-md-4">
+          <mat-form-field  class="example-full-width">
+          <input  matInput name="file_owner_id" [(ngModel)]="file_owner_id"  placeholder="FILE OWNER ID"required> 
+          </mat-form-field>
+          </div>
+        
+        <div class="col-md-4">
+          <mat-form-field  class="example-full-width">
+          <input  matInput name="fileowner_name" [(ngModel)]="fileowner_name"  placeholder="FILE OWNER NAME"required> 
+          </mat-form-field>
+          </div>
+      
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+          <input matInput name="fileowner_email"  [(ngModel)]="fileowner_email" placeholder="FILE OWNER EMAIL" required> 
+          </mat-form-field>
+          </div>
+     
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+          <input matInput name="fileowner_phone" [(ngModel)]="fileowner_phone" placeholder="FILE OWNER PHONE"  required> 
+          </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field>
+              <mat-label >BANK</mat-label >
+            <mat-select [(ngModel)]="bankname" name="bankname">
+            <mat-option *ngFor="let account of accountsss" [value]="account.id" > {{account.name}}
+            </mat-option>
+            </mat-select> 
+            </mat-form-field>
+            </div>
+        
+       <div class="col-md-4">
+      <mat-form-field class="example-full-width">
+      <input matInput name="IFSC" [(ngModel)]="IFSC"  placeholder="IFSC CODE" required> 
+      </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="example-full-width">
+        <input matInput name="account_num"  [(ngModel)]="account_num" placeholder="ACCOUNT NUMBER" required> 
+        </mat-form-field>
+        </div>
+        
+                <div class="col-md-4">
+                  <mat-form-field>
+                  <mat-label>TYPE OF Account</mat-label >
+                  <mat-select [(ngModel)]="type_of_account"name="type_of_account">
+                  <mat-option *ngFor="let account of accountss" [value]="account.id" > {{account.name}}
+                  </mat-option>
+                  </mat-select> 
+                  </mat-form-field>
+                  </div>
+                  </div>
+              <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                <input matInput id="bankname1" name="bankname1"  [(ngModel)]="contact.bankname1" placeholder="BANK NAME:" required> 
+                </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                  <input matInput  name="incentives1"  [(ngModel)]="incentives1" placeholder="INCENTIVE:" required> 
+                  </mat-form-field>
+                  </div>
+             </div>
+             <div class="row">
+             <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+              <input matInput id="bankname2" name="bankname2"  [(ngModel)]="contact.bankname2" placeholder="BANK NAME:" required> 
+              </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                <input matInput  name="incentives2"  [(ngModel)]="incentives2" placeholder="INCENTIVE:" required> 
+                </mat-form-field>
+                </div>
+           </div>
+
+           <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname3" name="bankname3"  [(ngModel)]="contact.bankname3" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives3"  [(ngModel)]="incentives3" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname4" name="bankname4"  [(ngModel)]="contact.bankname4" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives4"  [(ngModel)]="incentives4" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname5" name="bankname5"  [(ngModel)]="contact.bankname5" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives5"  [(ngModel)]="incentives5" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname6" name="bankname6"  [(ngModel)]="contact.bankname6" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives6"  [(ngModel)]="incentives6" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname7" name="bankname7"  [(ngModel)]="contact.bankname7" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives7"  [(ngModel)]="incentives7" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname8" name="bankname8"  [(ngModel)]="contact.bankname8" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives8"  [(ngModel)]="incentives8" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname9" name="bankname9"  [(ngModel)]="contact.bankname9" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives9"  [(ngModel)]="incentives9" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname10" name="bankname10"  [(ngModel)]="contact.bankname10" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives10"  [(ngModel)]="incentives10" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname11" name="bankname11"  [(ngModel)]="contact.bankname11" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives11"  [(ngModel)]="incentives11" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname12" name="bankname12"  [(ngModel)]="contact.bankname12" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives12"  [(ngModel)]="incentives12" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname13" name="bankname13"  [(ngModel)]="contact.bankname13" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives13"  [(ngModel)]="incentives13" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname14" name="bankname14"  [(ngModel)]="contact.bankname14" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives14"  [(ngModel)]="incentives14" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname15" name="bankname15"  [(ngModel)]="contact.bankname15" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives15"  [(ngModel)]="incentives15" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+             <mat-form-field class="example-full-width">
+             <input matInput id="bankname16" name="bankname16"  [(ngModel)]="contact.bankname16" placeholder="BANK NAME:" required> 
+             </mat-form-field>
+             </div>
+             <div class="col-md-4">
+               <mat-form-field class="example-full-width">
+               <input matInput  name="incentives16"  [(ngModel)]="incentives16" placeholder="INCENTIVE:" required> 
+               </mat-form-field>
+               </div>
+          </div>
+          
+                
+              
+              <hr>
+              <div class="col-md-12">
+    <button mat-raised-button style="background-color: rgb(230, 70, 42);" type="submit"(click)="onDriver(file_owner_id,fileowner_name,fileowner_email,fileowner_phone,bankname,IFSC,account_num,type_of_account,bankname1,bankname2,bankname3,bankname4,bankname5,bankname6,bankname7,bankname8,bankname9,bankname10,bankname11,bankname12,bankname13,bankname14,bankname15,bankname16,incentives1,incentives2,incentives3,incentives4,incentives5,incentives6,incentives7,incentives8,incentives9,incentives10,incentives11,incentives12,incentives13,incentives14,incentives15,incentives16)"class="btn btn-info pull-right">SUBMIT</button>
+    </div>
+    </div>
+    </div>
+    </div> 
+    </div>
+    </div>
+    </div>
+

@@ -1,0 +1,147 @@
+<div class="main-content">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-8">
+    <div class="card">
+    <div class="card-header card-header-success">
+        <button mat-raised-button id="modal-cancel-button" style="margin-left:630px;" (click)="closeModal()">Back</button>
+    <h4 class="card-title" style="color: white;text-align: center;"> UPDATE DETAILS</h4>
+    <p class="card-category" style="color: white;"></p>
+    </div>
+    <div class="card-body">
+                                                       
+    
+      <div class="row">
+        <div class="col-md-4">
+          <label >DATE:</label >
+          <input  name="date1" [(ngModel)]="date1" >
+          <input type="date" name="date1" [(ngModel)]="date1" >
+          </div>
+        <div class="col-md-4">
+          <mat-form-field  class="example-full-width">
+          <input  matInput name="collected_name" [(ngModel)]="collected_name"  placeholder="COLLECTED BY"required> 
+          </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <label >LOGIN DATE:</label >
+            <input  name="login_date1" [(ngModel)]="login_date1" >
+            <input type="date" name="login_date1" [(ngModel)]="login_date1" >
+            </div>
+          </div>
+
+
+          <hr>
+            
+           <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-label >File Owner ID</mat-label >
+              <mat-select [(ngModel)]="file_owner_id"name="file_owner_id">
+              <mat-option *ngFor="let account of accountid" [value]="account.file_owner_id" > {{account.file_owner_id}}
+              </mat-option>
+              </mat-select> 
+              </mat-form-field>
+              </div>
+      <div class="col-md-4">
+        <mat-form-field>
+          
+        <mat-label >BANK</mat-label >
+        <mat-select [(ngModel)]="bank_name"name="bank_name">
+        <mat-option *ngFor="let account of accountsss" [value]="account.id" > {{account.name}}
+        </mat-option>
+        </mat-select> 
+        </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+          <input matInput name="bar_code" [(ngModel)]="bar_code" placeholder="APPLICATION NUMBER"  required> 
+          </mat-form-field>
+          </div>
+        
+       <div class="col-md-4">
+      <mat-form-field class="example-full-width">
+      <input matInput name="app_id" [(ngModel)]="app_id"  placeholder="APPLICATION ID" required> 
+      </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field class="example-full-width">
+        <input matInput name="customer_name"  [(ngModel)]="customer_name" placeholder="CUSTOMER NAME" required> 
+        </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+          <input matInput name="customer_phone" [(ngModel)]="customer_phone1" placeholder="CUSTOMER MOB NO."  required> 
+          </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+            <input matInput name="company_name" [(ngModel)]="company_name" placeholder="COMPANY NAME"  required> 
+            </mat-form-field>
+            </div>
+        </div>
+            
+              <hr>
+              <div class="row">
+                <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                <input matInput name="logged_loan_amount" [(ngModel)]="logged_loan_amount" placeholder="LOGGED LOAN AMOUNT"required> 
+                </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                  <input matInput name="approved_amount" [(ngModel)]="approved_amount" placeholder="APPROVED AMOUNT"required> 
+                  </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field class="example-full-width">
+                    <input matInput name="disbursed_loan_amount" [(ngModel)]="disbursed_loan_amount" placeholder="DISBURSED LOAN AMOUNT"required> 
+                    </mat-form-field>
+                    </div>
+                <div class="col-md-4">
+                  <mat-form-field>
+                  <mat-label>TYPE OF LOAN</mat-label >
+                  <mat-select [(ngModel)]="type_of_loan"name="type_of_loan">
+                  <mat-option *ngFor="let account of accountss" [value]="account.id" > {{account.name}}
+                  </mat-option>
+                  </mat-select> 
+                  </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field>
+                    <mat-label>STATUS</mat-label >
+                    <mat-select [(ngModel)]="status"name="status">
+                    <mat-option *ngFor="let account of accountsssss" [value]="account.id" > {{account.name}}
+                    </mat-option>
+                    </mat-select> 
+                    </mat-form-field>
+                    </div>
+                    
+              </div>
+              
+              <hr>
+              <div class="row">
+                
+                <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                <input matInput name="comments" [(ngModel)]="comments" placeholder="Comments"required> 
+                </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <label >Month of disbursment</label >
+                    <input  name="month_disbursement1" [(ngModel)]="month_disbursement1" >
+                  <input  type="month" name="month_disbursement1" [(ngModel)]="month_disbursement1" > 
+                  </div>
+              </div>
+     
+      
+    
+   
+    <div class="col-md-12">
+    <button mat-raised-button style="background-color: rgb(230, 70, 42);" type="submit"(click)="onDriver(date,collected_name,login_date,file_owner_id,bank_name,bar_code,app_id,customer_name,customer_phone,company_name,logged_loan_amount,approved_amount,disbursed_loan_amount,type_of_loan,status,comments,month_disbursement)"class="btn btn-info pull-right">SUBMIT</button>
+    </div>
+    </div>
+    </div>
+    </div> 
+    </div>
+    </div>
+    </div>

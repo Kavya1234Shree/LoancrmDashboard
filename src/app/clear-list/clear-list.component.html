@@ -1,0 +1,63 @@
+<h2 style="text-align: center;font-family: Georgia, serif;"> List of Cleared Data</h2>
+<!-- <button type="button" class="btn trade-back"  [routerLink]="['/dashboard']">Back</button> <br> -->
+<button mat-raised-button color="primary" style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;width:120px;" [routerLink]="['/clear-list']" (click)="refresh()">Refresh</button><br>
+<!-- <div style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;" >
+  <button (click)="download()" class="btn btn-success">Export To Excel</button> 
+ </div> -->
+ <div style="margin-top:20px; margin-left: 1100px;margin-bottom: 10px;" >
+  <button (click)="download()" class="btn btn-success">Export To Excel</button> 
+ </div>
+
+<input  type="text" id="myInput" style="margin-left:500px;" placeholder="Search here.. " [(ngModel)]="term" title="Type in a name"><br><br>
+
+
+
+<div class="container"
+fxLayout
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="0" style="background-color: white;">
+
+<div class="container">
+       
+<table id="customers">
+  <col width="130">
+<thead>
+ <tr>
+   <th>SL.NO</th>
+   <th>File Owner ID</th>
+   <th>Customer Name</th>
+   <th>Disbursed Loan Amount</th>
+   <th>status</th>
+   <th>comments</th>
+   <!-- <th>Login Date</th> -->
+   <th>Bank Name<th>
+   
+    <th>Action</th> 
+   
+</thead>
+    <tr *ngFor="let driver of clr_info|filter:term,let i = index;">
+      <td >{{i+1}}</td>
+      <!-- <td *ngFor="let diver of driver.driver_info">{{diver.driver_uuid}}</td>
+      <td *ngFor="let diver of driver.driver_info">{{diver.driver_name}}</td>
+      <td *ngFor="let diver of driver.driver_info">{{diver.phone}}</td>  -->
+      <td>{{driver.file_owner_id}}</td> 
+      <td>{{driver.customer_name}}</td>
+      <td>{{driver.disbursed_loan_amount}}</td> 
+      <td>{{driver.status}}</td>
+      
+      <td>{{driver.comments}}</td>
+      <!-- <td>{{driver.login_date | date}}</td>  -->
+      <td>{{driver.bank_name}}</td>
+      
+      <td>
+        <button mat-raised-button style="background-color:darkcyan; color:white;" (click)="openModal(driver.bar_code)">EDIT</button>
+     </td>
+     </tr>
+  </table>
+   <div>
+    <pagination-controls  id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div> 
+  </div>
+  </div>

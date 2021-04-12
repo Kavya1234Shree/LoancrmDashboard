@@ -1,0 +1,39 @@
+<div class="main-content" *ngIf="isAdmin">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-8">
+    <div class="card">
+    <div class="card-header card-header-success">
+    <h4 class="card-title" style="color: white;text-align: center;">ADD Advance To FileOwner</h4>
+    <p class="card-category" style="color: white;"></p>
+    </div>
+    <div class="card-body">
+                                                       
+    
+      <div class="row">
+        <div class="col-md-4">
+              <mat-form-field>
+                <mat-label >File Owner ID</mat-label >
+              <mat-select [(ngModel)]="file_owner_id"name="file_owner_id">
+              <mat-option *ngFor="let account of accountid" [value]="account.file_owner_id" > {{account.file_owner_id}}
+              </mat-option>
+              </mat-select> 
+              </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field  class="example-full-width">
+                <input  matInput name="advnce_amount" [(ngModel)]="advnce_amount"  placeholder="Advanced Amount"required> 
+                </mat-form-field>
+                </div>
+                
+     <div class="col-md-12">
+    <button mat-raised-button style="background-color: rgb(230, 70, 42);" type="submit"(click)="onDriver(file_owner_id,advnce_amount)"class="btn btn-info pull-right">SUBMIT</button>
+    </div>
+    </div>
+    </div>
+    </div> 
+    </div>
+    </div>
+    </div>
+    
+

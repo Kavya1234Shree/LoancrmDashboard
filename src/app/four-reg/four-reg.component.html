@@ -1,0 +1,35 @@
+<div class="container"
+fxLayout
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="0" style="background-color: white;">
+
+<div class="container">
+       
+<table class="table">
+<thead>
+ <tr>
+   <th>Id</th>
+   <th>Driver Name</th>
+   <th>Phone</th>
+   <th>Actions</th>
+ </tr>
+</thead>
+<tbody>
+ <tr *ngFor="let dri of driverfour_info">
+   <td>{{dri.driver_uuid}}</td>
+   <td >{{dri.driver_name}}</td>
+   <td >{{dri.phone}}</td>
+   <td>
+     <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+     <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+     <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+ </td>
+ </tr>
+ 
+</tbody>
+</table>
+</div>
+</div>
+

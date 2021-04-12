@@ -1,0 +1,206 @@
+
+ <div class="navbar-nav" *ngIf="currentUser" >
+    <!-- <a class="nav-item nav-link" routerLink="/">Home</a> -->
+    <a class="btn btn-primary" style="background-color: #1885b7 ;width: 8%;margin-left:1220px;color:white" (click)="logout()">Logout</a>
+</div>
+
+<div class="main-content">
+  <div class="container-fluid">
+<button mat-raised-button color="primary" style="margin-top:10px; margin-left: 1200px;"
+ [routerLink]="['/dashboard']" (click)="refresh()">Refresh</button>
+      <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                 
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">account_balance</i>
+                      </div>
+                      <p class="card-category">Number of Pendings</p>
+                      <h3 class="card-title">{{driver_online}}
+                          
+                      </h3>
+                  </div>
+                 
+               
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="card card-stats">
+               
+                  <div class="card-header card-header-danger card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">account_balance</i>
+                      </div>
+                      <p class="card-category">Number of InProcess</p>
+                      <h3 class="card-title">{{driver_offline}}</h3>
+                  </div>
+                  
+                 
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">account_balance</i>
+                      </div>
+                      <p class="card-category">Number of Declined</p>
+                      <h3 class="card-title">{{driver_two}}</h3>
+                  </div>
+                 
+                 
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="card card-stats">
+               
+                  <div class="card-header card-header-danger card-header-icon">
+                      <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                      </div>
+                      <p class="card-category">Number of approved Cancelled</p>
+                      <h3 class="card-title">{{driver_four}}</h3>
+                  </div>
+                  
+                 
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-success  card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Approved</p>
+                    <h3 class="card-title">{{picked_up}}</h3>
+                </div>
+               
+               
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Disbursed</p>
+                    <h3 class="card-title">{{picking_up}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Rework</p>
+                    <h3 class="card-title">{{reworks}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+       
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of File Recieved</p>
+                    <h3 class="card-title">{{files}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Login Returned</p>
+                    <h3 class="card-title">{{logindata}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Cancels</p>
+                    <h3 class="card-title">{{cancl}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Fianl Disbursed</p>
+                    <h3 class="card-title">{{findis}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Number of Cleared data</p>
+                    <h3 class="card-title">{{clear}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+               
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">account_balance</i>
+                    </div>
+                    <p class="card-category">Total Number of data</p>
+                    <h3 class="card-title">{{alldata}}</h3>
+                </div>
+               
+             
+            </div>
+        </div>
+       
+       
+        
+        
+      </div>
+      
+         
+      </div>
+  </div>
+
